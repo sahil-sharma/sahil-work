@@ -6,11 +6,9 @@
     <style>
       :root {
         --color-dark: #1A2A41;
-        --color-blue: #219EB8;
-        --color-blue-accent: #8BBED1;
-        --color-bg: var(--color-dark);
-        --color-primary: var(--color-blue);
-        --color-secondary: var(--color-blue-accent);
+        --color-primary: #E0E0E0;
+        --color-secondary: #74B9FF;
+        --color-link: #FFDDAA;
       }
 
       * {
@@ -33,14 +31,15 @@
         min-height: 100vh;
         flex-direction: column;
         justify-content: center;
-        background-color: var(--color-bg);
+        background-color: var(--color-dark);
+        color: var(--color-primary);
       }
 
       h1 {
         margin: 0 0 1rem;
         padding: 0;
         font-size: 5rem;
-        color: var(--color-primary);
+        color: var(--color-link);
       }
 
       .main {
@@ -73,6 +72,15 @@
 
       .contact p {
         margin: 0.2rem 0;
+      }
+
+      .contact a {
+        color: var(--color-link) !important;
+        text-decoration: none;
+      }
+
+      .contact a:hover {
+        text-decoration: underline !important;
       }
     </style>
   </head>
