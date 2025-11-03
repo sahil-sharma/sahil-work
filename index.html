@@ -50,9 +50,16 @@
 
       .contact {
         display: inline-flex;
+        flex-direction: column;
         font-size: 2rem;
-        pointer-events: none;
+        pointer-events: auto;
         color: var(--color-secondary);
+      }
+
+      .email-wrapper {
+        display: inline-flex;
+        align-items: center;
+        margin-bottom: 1rem;
       }
 
       .contact__inbox::after {
@@ -63,15 +70,28 @@
         direction: rtl;
         unicode-bidi: isolate-override;;
       }
+
+      .contact p {
+        margin: 0.2rem 0;
+      }
     </style>
   </head>
   <body>
     <main class="main">
       <h1>Sahil Sharma</h1>
       <section class="contact">
-        <span class="contact__inbox">hello</span>
-        <span class="contact__domain">sahil</span>
-        <span class="contact__tld">krow.</span>
+        <span class="email-wrapper">
+          <span class="contact__inbox">hello</span>
+          <span class="contact__domain">sahil</span>
+          <span class="contact__tld">krow.</span>
+        </span>
+
+        <p>
+          <a href="https://sessionize.com/sahilsharma" target="_blank" rel="noopener noreferrer">Sessionize Profile</a>
+        </p>
+        <p>
+          <a href="https://useful-sheep-ca2.notion.site/Working-With-Me-2004d816f20d80078079f7069124c675" target="_blank" rel="noopener noreferrer">Working With Me</a>
+        </p>
       </section>
     </main>
   </body>
