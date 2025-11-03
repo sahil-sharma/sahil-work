@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sahil Sharma</title>
+    <link href="https://fonts.cdnfonts.com/css/special-elite" rel="stylesheet">
+    <style>
+      :root {
+        --color-dark: #1A2A41;
+        --color-blue: #219EB8;
+        --color-blue-accent: #8BBED1;
+        --color-bg: var(--color-dark);
+        --color-primary: var(--color-blue);
+        --color-secondary: var(--color-blue-accent);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 16px;
+        font-family: 'Special Elite', Impact, 'Arial Narrow Bold', Arial, sans-serif;
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        background-color: var(--color-bg);
+      }
+
+      h1 {
+        margin: 0 0 1rem;
+        padding: 0;
+        font-size: 5rem;
+        color: var(--color-primary);
+      }
+
+      .main {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .contact {
+        display: inline-flex;
+        font-size: 2rem;
+        pointer-events: none;
+        color: var(--color-secondary);
+      }
+
+      .contact__inbox::after {
+        content: '@';
+      }
+
+      .contact__tld {
+        direction: rtl;
+        unicode-bidi: isolate-override;;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="main">
+      <h1>Sahil Sharma</h1>
+      <section class="contact">
+        <span class="contact__inbox">hello</span>
+        <span class="contact__domain">sahil</span>
+        <span class="contact__tld">krow.</span>
+      </section>
+    </main>
+  </body>
+</html>
