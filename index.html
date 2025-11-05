@@ -43,8 +43,11 @@
       }
 
       .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* horizontal center */
+        text-align: center;  /* center text inside elements */
         padding: 20px;
-        text-align: center;
       }
 
       .contact {
@@ -75,6 +78,8 @@
       }
 
       .contact a {
+        display: inline-block;
+        margin: 6px 0;
         color: var(--color-link) !important;
         text-decoration: none;
       }
@@ -82,10 +87,21 @@
       .contact a:hover {
         text-decoration: underline !important;
       }
+
+      .round-photo {
+      width: 150px;        /* Adjust size as needed */
+      height: 150px;       /* Must be equal to width for a perfect circle */
+      border-radius: 70%;  /* Makes image circular */
+      object-fit: cover;   /* Scales and crops the image to fill */
+      display: block;      
+      margin: 0 auto 20px; /* Center above heading and add spacing */
+    }
+
     </style>
   </head>
   <body>
     <main class="main">
+      <img src="photo.png" alt="Sahil Sharma" class="round-photo">
       <h1>Sahil Sharma</h1>
       <section class="contact">
         <span class="email-wrapper">
