@@ -1,0 +1,131 @@
+/* Base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: #1f2933;
+  background: #fdf6e3;
+  line-height: 1.7;
+}
+
+/* HERO HEADER IMAGE */
+.hero {
+  height: 260px;
+  background: url("working-with-me.png") center / cover no-repeat;
+}
+
+/* Profile photo */
+.avatar {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+  background: white;
+  display: block;
+  margin: -50px auto 1rem; /* pulls avatar below header */
+}
+
+/* Intro block */
+.intro {
+  text-align: center;
+  max-width: 640px;
+  /* margin: 0 auto 3rem; */
+  padding: 0 1rem;
+  margin: -50px auto 3rem;
+
+}
+
+h1 {
+  font-size: 2.1rem;
+  margin: 0.5rem 0;
+  font-weight: 600;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #6b7280;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+/* Main content */
+.container {
+  max-width: 720px;
+  margin: 0 auto 3rem;
+  padding: 0 1.25rem;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+/* Lists */
+.clean-list {
+  padding-left: 1.2rem;
+}
+
+.clean-list li {
+  margin-bottom: 0.5rem;
+}
+
+.muted {
+  color: #6b7280;
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid #e5e7eb;
+  padding: 1.5rem;
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .hero {
+    height: 200px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+.clean-list {
+  padding-left: 1.25rem;  /* main indent for bullets */
+  margin: 0;               /* remove default list margin */
+}
+
+.clean-list li {
+  margin-bottom: 0.75rem; /* spacing between list items */
+  line-height: 1.6;
+  display: list-item;      /* ensures normal bullet behavior */
+  text-align: left;        /* aligns all lines nicely */
+  word-break: break-word;  /* prevents overflowing text */
+}
+
+.clean-list li ul {
+  padding-left: 1.2rem;   /* nested bullets slightly indented */
+  margin-top: 0.25rem;    /* small spacing before nested list */
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.95em;
+  background-color: #f3f4f6;   /* soft gray */
+  color: #374151;              /* dark gray text */
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+  white-space: nowrap;
+}
