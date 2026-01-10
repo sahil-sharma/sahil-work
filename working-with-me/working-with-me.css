@@ -49,7 +49,7 @@ h1 {
   font-size: 1rem;
   color: #6b7280;
   line-height: 1.4;
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
 
 /* Main content */
