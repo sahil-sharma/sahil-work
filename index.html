@@ -3,6 +3,8 @@
   <head>
     <title>Sahil Sharma</title>
     <link href="https://fonts.cdnfonts.com/css/special-elite" rel="stylesheet">
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
     <style>
       :root {
         --color-dark: #1A2A41;
@@ -82,6 +84,7 @@
         margin: 6px 0;
         color: var(--color-link) !important;
         text-decoration: none;
+        cursor: pointer;
       }
 
       .contact a:hover {
@@ -89,13 +92,13 @@
       }
 
       .round-photo {
-      width: 150px;        /* Adjust size as needed */
-      height: 150px;       /* Must be equal to width for a perfect circle */
-      border-radius: 70%;  /* Makes image circular */
-      object-fit: cover;   /* Scales and crops the image to fill */
-      display: block;      
-      margin: 0 auto 20px; /* Center above heading and add spacing */
-    }
+        width: 150px;        /* Adjust size as needed */
+        height: 150px;       /* Must be equal to width for a perfect circle */
+        border-radius: 70%;  /* Makes image circular */
+        object-fit: cover;   /* Scales and crops the image to fill */
+        display: block;
+        margin: 0 auto 20px; /* Center above heading and add spacing */
+      }
 
     </style>
   </head>
@@ -123,6 +126,9 @@
         </p>
         <p>
           <a href="./working-with-me/working-with-me.html" target="_blank" rel="noopener noreferrer">Working With Me</a>
+        </p>
+        <p>
+          <a onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hello-sahil?hide_landing_page_details=1&hide_gdpr_banner=1'});return false;">Let's Talk</a>
         </p>
       </section>
     </main>
