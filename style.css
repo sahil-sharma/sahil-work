@@ -1,0 +1,187 @@
+:root {
+    --bg: #0a0a0c;
+    --card: rgba(22, 22, 26, 0.7);
+    --accent: #3b82f6;
+    --text: #ffffff;
+    --text-dim: #9ca3af;
+    --border: rgba(255, 255, 255, 0.08);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.bg-glow {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 50% 50%, #1e1e2e 0%, #0a0a0c 100%);
+    z-index: -1;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+}
+
+.profile-card {
+    background: var(--card);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--border);
+    border-radius: 40px;
+    padding: 50px 30px;
+    text-align: center;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+}
+
+.main-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 35px;
+    margin-bottom: 25px;
+    border: 1px solid var(--border);
+    object-fit: cover;
+}
+
+.name-heading {
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 2.5rem;
+    text-transform: lowercase;
+    letter-spacing: -1px;
+    margin-bottom: 8px;
+}
+
+.role-tag {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+}
+
+.links-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.nav-link.primary {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    padding: 18px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    transition: 0.3s;
+}
+
+.nav-link.primary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+.nav-link small {
+    color: var(--text-dim);
+    font-size: 0.75rem;
+    margin-top: 4px;
+}
+
+.secondary-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.secondary-links a {
+    padding: 12px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    text-decoration: none;
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    transition: 0.2s;
+}
+
+.secondary-links a:hover {
+    color: white;
+    border-color: rgba(255,255,255,0.2);
+}
+
+/* Let's Talk Button */
+.cta-button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 18px;
+    border-radius: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+}
+
+.contact-footer {
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: var(--text-dim);
+}
+
+.email-wrapper { display: inline-flex; align-items: center; opacity: 0.6; }
+.contact__inbox::after { content: '@'; }
+.contact__tld { direction: rtl; unicode-bidi: isolate-override; }
+
+/* Mobile Height Adjustment */
+@media (max-height: 700px) {
+    body { align-items: flex-start; padding-top: 40px; }
+}
+
+/* Ensure the secondary grid is only 2 columns now */
+.secondary-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+/* Styling for the centered 'Working With Me' button */
+.nav-link.full-width {
+    padding: 14px;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    text-decoration: none;
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    transition: 0.2s;
+    display: block; /* Takes up the full row */
+}
+
+.nav-link.full-width:hover {
+    color: white;
+    border-color: rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Optional: Slight tweak to the CTA button for better spacing */
+.cta-button {
+    margin-top: 5px;
+}
