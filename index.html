@@ -41,12 +41,25 @@
             </nav>
 
             <footer class="contact-footer">
-                <span class="email-wrapper">
-                    <span class="contact__inbox">hello</span>
-                    <span class="contact__domain">sahil</span>
-                    <span class="contact__tld">krow.</span>
-                </span>
+                <a href="#" class="email-link" id="dynamic-email">
+                    <span class="email-wrapper">
+                        <span class="contact__inbox">hello</span>
+                        <span class="contact__domain">sahil</span>
+                        <span class="contact__tld">krow.</span>
+                    </span>
+                </a>
             </footer>
+
+            <script>
+                const emailBtn = document.getElementById('dynamic-email');
+                emailBtn.addEventListener('mouseenter', () => {
+                    // Assembles: hello + @ + sahil + . + work (reversed krow.)
+                    const inbox = "hello";
+                    const domain = "sahil";
+                    const tld = "work"; 
+                    emailBtn.href = `mailto:${inbox}@${domain}.${tld}`;
+                });
+            </script>
         </div>
     </main>
 </body>

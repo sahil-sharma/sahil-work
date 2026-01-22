@@ -185,3 +185,30 @@ body {
 .cta-button {
     margin-top: 5px;
 }
+
+.email-link {
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.email-wrapper {
+    display: inline-flex;
+    align-items: center;
+    color: var(--text-dim); /* Default color */
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Hover effects */
+.email-link:hover .email-wrapper {
+    color: var(--accent); /* Glows blue on hover */
+    filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.4));
+}
+
+.contact__inbox::after { content: '@'; }
+.contact__tld { 
+    direction: rtl; 
+    unicode-bidi: isolate-override; 
+}
