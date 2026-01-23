@@ -1,10 +1,10 @@
 :root {
-  --bg: #090a0b;           /* Obsidian */
-  --card: #111214;         /* Surface */
-  --border: #1f2124;       /* Slate border */
-  --accent: #ffffff;       /* Phosphor white */
-  --text: #e1e1e1;         /* Primary text */
-  --text-dim: #70757a;     /* Muted labels */
+  --bg: #090a0b;           /* Obsidian Deep Slate */
+  --card: #111214;         /* Surface Gray */
+  --border: #1f2124;       /* Tactical Slate Border */
+  --accent: #ffffff;       /* High-Contrast White */
+  --text: #e1e1e1;         /* Primary Body Text */
+  --text-dim: #70757a;     /* Muted/Faded Metadata */
 }
 
 /* 1. Reset & Global Styles */
@@ -13,13 +13,13 @@
 body {
   background-color: var(--bg);
   color: var(--text);
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   line-height: 1.7;
   scrollbar-width: thin;
   scrollbar-color: var(--border) var(--bg);
 }
 
-.bg-glow { display: none; } /* Keeping it clean and dark */
+.bg-glow { display: none; } /* Kept clean and dark look */
 
 .page-wrapper {
   max-width: 1100px;
@@ -68,7 +68,7 @@ body {
   font-size: 0.85rem;
 }
 
-/* 3. Layout */
+/* 3. Layout Grid */
 .content-layout {
   display: grid;
   grid-template-columns: 250px 1fr;
@@ -111,11 +111,75 @@ h2 {
   letter-spacing: 2px;
   border-left: 2px solid var(--accent);
   padding-left: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 p { margin-bottom: 20px; color: var(--text-dim); }
 
-/* 5. Components */
+/* 5. Comms Table (The Emoji Fix) */
+.comms-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.comms-table td {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    color: var(--text-dim);
+    font-size: 0.95rem;
+}
+
+.comms-table td strong {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: none !important; /* Critical: Prevents browser from hiding emojis */
+    color: var(--accent);
+}
+
+.comms-table td:first-child {
+    width: 160px;
+    padding-right: 20px;
+}
+
+.comms-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* 6. Value List (The Emoji Fix) */
+.value-list {
+    list-style: none;
+    padding: 0;
+}
+
+.value-list li {
+    color: var(--text-dim);
+    margin-bottom: 18px;
+    font-size: 0.95rem;
+}
+
+.value-list li strong {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: none !important; /* Critical: Prevents browser from hiding emojis */
+    color: var(--accent);
+}
+
+/* This class applies the uppercase style to text without breaking emojis */
+.label-text {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+}
+
+/* 7. Reusable Components */
 .badge {
   display: inline-block;
   background: rgba(255, 255, 255, 0.05);
@@ -146,21 +210,6 @@ p { margin-bottom: 20px; color: var(--text-dim); }
   letter-spacing: 1px;
 }
 
-.comms-table td {
-  padding: 20px 0;
-  border-bottom: 1px solid var(--border);
-  font-size: 0.9rem;
-  color: var(--text-dim);
-}
-
-.comms-table td:first-child { 
-  width: 140px; 
-  color: var(--accent); 
-  font-weight: 600; 
-  text-transform: uppercase;
-  font-size: 0.8rem;
-}
-
 code {
   background: #1a1b1e;
   color: var(--accent);
@@ -170,11 +219,12 @@ code {
   border: 1px solid var(--border);
 }
 
-/* 6. Footer */
+/* 8. Footer */
 .manual-footer {
   padding-top: 40px;
   border-top: 1px solid var(--border);
   text-align: center;
+  margin-top: 60px;
 }
 
 .manual-footer a {
@@ -189,21 +239,11 @@ code {
   border-bottom-color: var(--accent);
 }
 
-/* 7. Responsive */
+/* 9. Responsive Settings */
 @media (max-width: 850px) {
   .content-layout { grid-template-columns: 1fr; }
   .sidebar { display: none; }
   .manual-header h1 { font-size: 1.8rem; }
   .page-wrapper { padding: 40px 20px; }
-}
-
-.value-list li {
-    color: var(--text-dim); /* Faded body text */
-    margin-bottom: 12px;
-}
-
-.value-list li strong {
-    color: var(--accent);
-    display: inline-block;
-    margin-right: 5px;
+  .comms-table td:first-child { width: 120px; }
 }
