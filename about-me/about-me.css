@@ -22,7 +22,7 @@ body {
   scrollbar-color: var(--border) var(--bg);
 }
 
-.bg-glow { display: none; } /* Kept off for Palantir aesthetic */
+.bg-glow { display: none; } /* Kept off for aesthetic */
 
 .wrapper { 
   max-width: 1000px; 

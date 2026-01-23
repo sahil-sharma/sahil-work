@@ -267,7 +267,7 @@ body {
 
 .card:hover {
   border-color: #444; /* Very subtle hover feedback */
-  transform: none;    /* Palantir design is stable, not "bouncy" */
+  transform: none;    /* Design is stable, not "bouncy" */
 }
 
 .label {
