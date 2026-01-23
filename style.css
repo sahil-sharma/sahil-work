@@ -1,10 +1,33 @@
 :root {
-    --bg: #0a0a0c;
-    --card: rgba(22, 22, 26, 0.7);
-    --accent: #3b82f6;
-    --text: #ffffff;
-    --text-dim: #9ca3af;
-    --border: rgba(255, 255, 255, 0.08);
+  --bg: #090a0b;
+  --card: #111214;
+  --border: #1f2124;
+  --accent: #ffffff;
+  --text: #e1e1e1;
+  --text-dim: #70757a;
+  --highlight: #3b82f6;
+}
+
+.bg-glow {
+  display: none;
+}
+
+h1 {
+  font-family: 'Julius Sans One', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 4px; /* Essential for that tech-firm look */
+  font-size: 2.2rem;
+  color: #ffffff;
+}
+
+.tagline, .role-tag {
+  font-family: 'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-dim);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -18,13 +41,6 @@ body {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-}
-
-.bg-glow {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: radial-gradient(circle at 50% 50%, #1e1e2e 0%, #0a0a0c 100%);
-    z-index: -1;
 }
 
 .main-container {
@@ -46,7 +62,7 @@ body {
 .main-photo {
     width: 180px;
     height: 180px;
-    border-radius: 35px;
+    border-radius: 50%;
     margin-bottom: 25px;
     border: 1px solid var(--border);
     object-fit: cover;
@@ -54,10 +70,11 @@ body {
 
 .name-heading {
     font-family: 'Julius Sans One', sans-serif;
-    font-size: 2.5rem;
-    text-transform: lowercase;
-    letter-spacing: -1px;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
     margin-bottom: 8px;
+    color: #ffffff;
 }
 
 .role-tag {
@@ -121,23 +138,24 @@ body {
     border-color: rgba(255,255,255,0.2);
 }
 
-/* Let's Talk Button */
 .cta-button {
-    background: var(--accent);
-    color: white;
-    border: none;
+    background: #2a2c2f;
+    color: #ffffff !important;
+    border: 1px solid #3f4144;
     padding: 18px;
-    border-radius: 20px;
-    font-weight: 700;
+    border-radius: 4px;
+    font-weight: 600;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     margin-top: 10px;
-    transition: 0.3s;
+    transition: background 0.3s ease;
 }
 
 .cta-button:hover {
-    filter: brightness(1.1);
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+    background: #3a3c3f;
+    border-color: #555555;
 }
 
 .contact-footer {
@@ -201,14 +219,34 @@ body {
     font-weight: 500;
 }
 
-/* Hover effects */
+
 .email-link:hover .email-wrapper {
-    color: var(--accent); /* Glows blue on hover */
-    filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.4));
+    color: var(--accent); 
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2)); /* White glow */
 }
 
 .contact__inbox::after { content: '@'; }
 .contact__tld { 
     direction: rtl; 
     unicode-bidi: isolate-override; 
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 4px; /* Sharper corners = more professional/technical */
+  transition: border-color 0.4s ease;
+}
+
+.card:hover {
+  border-color: #444; /* Very subtle hover feedback */
+  transform: none;    /* Palantir design is stable, not "bouncy" */
+}
+
+.label {
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+  letter-spacing: 1.5px;
+  border-left: 2px solid #ffffff; /* Small vertical accent line */
+  padding-left: 10px;
 }

@@ -1,54 +1,80 @@
 :root {
-  --bg: #0a0a0c;
-  --card: #16161a;
-  --accent: #3b82f6;
-  --text: #f9fafb;
-  --text-dim: #9ca3af;
-  --border: rgba(255, 255, 255, 0.08);
+  --bg: #090a0b;           /* Obsidian */
+  --card: #111214;         /* Surface */
+  --border: #1f2124;       /* Slate border */
+  --accent: #ffffff;       /* Phosphor white */
+  --text: #e1e1e1;         /* Primary text */
+  --text-dim: #70757a;     /* Muted labels */
 }
 
+/* 1. Reset & Global Styles */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
   background-color: var(--bg);
   color: var(--text);
   font-family: 'Inter', sans-serif;
-  line-height: 1.6;
+  line-height: 1.7;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) var(--bg);
 }
 
-.bg-glow {
-  position: fixed;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: radial-gradient(circle at 50% -10%, #1e1e2e 0%, #0a0a0c 100%);
-  z-index: -1;
-}
+.bg-glow { display: none; } /* Keeping it clean and dark */
 
 .page-wrapper {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 60px 20px;
 }
 
-/* HEADER */
+/* 2. Navigation & Header */
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  transition: all 0.3s ease;
+}
+
+.back-link:hover { color: var(--accent); }
+.back-link i { font-size: 0.7rem; transition: transform 0.3s ease; }
+.back-link:hover i { transform: translateX(-4px); }
+
 .manual-header {
   margin-bottom: 60px;
   border-bottom: 1px solid var(--border);
-  padding-bottom: 30px;
+  padding-bottom: 40px;
 }
 
 .manual-header h1 {
   font-family: 'Julius Sans One', sans-serif;
   font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  color: var(--accent);
+  margin-bottom: 10px;
 }
 
-/* LAYOUT */
+.manual-header p {
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 0.85rem;
+}
+
+/* 3. Layout */
 .content-layout {
   display: grid;
   grid-template-columns: 250px 1fr;
-  gap: 50px;
+  gap: 60px;
 }
 
-/* SIDEBAR */
 .sidebar {
   position: sticky;
   top: 40px;
@@ -56,117 +82,128 @@ body {
 }
 
 .sidebar ul { list-style: none; }
-.sidebar li { margin-bottom: 15px; }
+.sidebar li { margin-bottom: 18px; }
 .sidebar a {
   color: var(--text-dim);
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   transition: 0.2s;
 }
+
 .sidebar a:hover { color: var(--accent); }
 
-/* CONTENT CARDS */
+/* 4. Content Cards */
 .content-card {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 24px;
+  border-radius: 4px; /* Tactical sharp corners */
   padding: 40px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
-h2 { margin-bottom: 20px; color: var(--accent); font-size: 1.4rem; }
-p { margin-bottom: 15px; color: var(--text-dim); }
+h2 { 
+  margin-bottom: 25px; 
+  color: var(--accent); 
+  font-size: 1.1rem; 
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-left: 2px solid var(--accent);
+  padding-left: 15px;
+}
 
-/* STYLES & BOXES */
-.style-item { margin-bottom: 25px; }
+p { margin-bottom: 20px; color: var(--text-dim); }
+
+/* 5. Components */
 .badge {
   display: inline-block;
-  background: rgba(59, 130, 246, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   color: var(--accent);
-  padding: 4px 12px;
-  border-radius: 8px;
+  padding: 5px 12px;
+  border-radius: 2px;
+  border: 1px solid var(--border);
   font-weight: 600;
-  font-size: 0.85rem;
-  margin-bottom: 10px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
 }
 
 .meeting-box {
-  background: rgba(255, 255, 255, 0.03);
-  padding: 20px;
-  border-radius: 15px;
-  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 25px;
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  margin-bottom: 20px;
 }
 
-.meeting-box h4 { margin-bottom: 8px; color: white; }
-
-/* COMMS TABLE */
-.comms-table {
-  width: 100%;
-  border-collapse: collapse;
+.meeting-box h4 { 
+  margin-bottom: 10px; 
+  color: white; 
+  text-transform: uppercase; 
+  font-size: 0.9rem;
+  letter-spacing: 1px;
 }
 
 .comms-table td {
-  padding: 15px 0;
+  padding: 20px 0;
   border-bottom: 1px solid var(--border);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  color: var(--text-dim);
 }
 
-.comms-table td:first-child { width: 120px; color: white; }
+.comms-table td:first-child { 
+  width: 140px; 
+  color: var(--accent); 
+  font-weight: 600; 
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
 
 code {
-  background: #222;
-  color: #e0e0e0;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-family: monospace;
+  background: #1a1b1e;
+  color: var(--accent);
+  padding: 2px 8px;
+  border-radius: 2px;
+  font-size: 0.9em;
+  border: 1px solid var(--border);
 }
 
-/* Specific fix for footer email visibility */
-.manual-footer p {
-  color: var(--text-dim); /* Sets "Questions? Reach out at" to light gray */
+/* 6. Footer */
+.manual-footer {
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+  text-align: center;
 }
 
 .manual-footer a {
-  color: var(--accent); /* Sets email to your bright blue */
+  color: var(--accent);
   text-decoration: none;
   font-weight: 600;
-  border-bottom: 1px solid rgba(59, 130, 246, 0.3); /* Subtle underline */
+  border-bottom: 1px solid #444;
   transition: 0.3s;
 }
 
 .manual-footer a:hover {
-  color: #ffffff; /* Turns white on hover */
-  border-bottom-color: #ffffff;
+  border-bottom-color: var(--accent);
 }
 
-/* RESPONSIVE */
+/* 7. Responsive */
 @media (max-width: 850px) {
   .content-layout { grid-template-columns: 1fr; }
   .sidebar { display: none; }
-  .manual-header h1 { font-size: 2rem; }
+  .manual-header h1 { font-size: 1.8rem; }
+  .page-wrapper { padding: 40px 20px; }
 }
 
-.back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--accent); /* Force the professional blue */
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 600;
-  margin-bottom: 25px;
-  transition: all 0.3s ease;
+.value-list li {
+    color: var(--text-dim); /* Faded body text */
+    margin-bottom: 12px;
 }
 
-.back-link i {
-  font-size: 0.8rem;
-  transition: transform 0.3s ease;
-}
-
-.back-link:hover {
-  color: #ffffff; /* Turns white on hover for clarity */
-}
-
-.back-link:hover i {
-  transform: translateX(-4px);
+.value-list li strong {
+    color: var(--accent);
+    display: inline-block;
+    margin-right: 5px;
 }
