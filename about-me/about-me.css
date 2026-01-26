@@ -175,3 +175,24 @@ h1 {
   .exp-items { grid-template-columns: 1fr; }
   .profile-img { width: 160px; height: 160px; }
 }
+
+/* The container link */
+.reverse-email-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--text-dim);
+    transition: color 0.3s ease;
+}
+
+.reverse-email-link:hover {
+    color: var(--accent);
+}
+
+/* The magic flip */
+.reverse-text {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    display: inline-block;
+}

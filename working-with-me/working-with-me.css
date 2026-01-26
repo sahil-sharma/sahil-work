@@ -247,3 +247,16 @@ code {
   .page-wrapper { padding: 40px 20px; }
   .comms-table td:first-child { width: 120px; }
 }
+
+/* Email Protection: Flips backward text to look normal to humans */
+.reverse-email {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    display: inline-block; /* Essential for the flip to work */
+    cursor: pointer;
+}
+
+/* Optional: Keep the hover effect consistent with your accent color */
+.reverse-email:hover {
+    color: var(--accent);
+}

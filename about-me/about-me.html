@@ -25,7 +25,10 @@
         <h1>Sahil Sharma</h1>
         <p class="tagline">Cloud & Platform Engineer</p>
         <div class="contacts">
-          <a href="mailto:hello@sahil.work"><i class="fa-regular fa-envelope"></i> hello@sahil.work</a>
+          <a href="#" class="contact-link reverse-email-link">
+            <i class="fa-regular fa-envelope"></i>
+            <span class="reverse-text">krow.lihas@olleh</span>
+          </a>
           <a href="https://github.com/sahil-sharma" target="_blank"><i class="fa-brands fa-github"></i> sahil-sharma</a>
           <span class="loc"><i class="fa-solid fa-location-dot"></i> Vienna, Austria</span>
         </div>
@@ -49,19 +52,19 @@
           <span class="pill">🐘 PostgreSQL</span>
           <span class="pill">🔐 Vault</span>
           <span class="pill">🏗️ Terraform</span>
-          <span class="pill">🔥 Prometheus</span>
-          <span class="pill">📡 Open Telemetry</span>
+          <span class="pill">📈 Prometheus</span>
+          <span class="pill">🔭 Open Telemetry</span>
           <span class="pill">📊 Grafana</span>
           <span class="pill">📝 Loki</span>
           <span class="pill">🚦 API Gateway</span>
-          <span class="pill">🚀 Nginx</span>
+          <span class="pill">🌐 Nginx</span>
           <span class="pill">👷 Jenkins</span>
           <span class="pill">🔄 GitHub Actions</span>
           <span class="pill">⛵ Istio</span>
           <span class="pill">🐙 Argo CD</span>
           <span class="pill">⚙️ Argo Workflows</span>
           <span class="pill">🛡️ OAuth2 Proxy</span>
-          <span class="pill">⚡ Kafka</span>
+          <span class="pill">📨 Kafka</span>
           <span class="pill">🐍 Python</span>
           <span class="pill">🐚 Bash</span>
         </div>
@@ -123,5 +126,15 @@
 
     </main>
   </div>
+
+  <script>
+    document.querySelector('.reverse-email-link').addEventListener('click', function(e) {
+      e.preventDefault();
+      // Grabs "krow.cba@olleh", reverses it, and opens the email app
+      const scrambled = this.querySelector('.reverse-text').textContent;
+      const unscrambled = scrambled.split("").reverse().join("");
+      window.location.href = "mailto:" + unscrambled;
+    });
+  </script>
 </body>
 </html>
