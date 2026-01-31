@@ -106,5 +106,34 @@
       </main>
     </div>
   </div>
+  <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.6 // Trigger when 60% of the section is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Find the sidebar link that matches the section's ID
+          const id = entry.target.getAttribute('id');
+          document.querySelectorAll('.sidebar a').forEach((link) => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${id}`) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+    }, observerOptions);
+
+    // Track all sections that have an ID
+    document.querySelectorAll('.content-card').forEach((section) => {
+      observer.observe(section);
+    });
+  });
+</script>
 </body>
 </html>

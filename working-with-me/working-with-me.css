@@ -82,17 +82,31 @@ body {
 }
 
 .sidebar ul { list-style: none; }
+
 .sidebar li { margin-bottom: 18px; }
+
 .sidebar a {
-  color: var(--text-dim);
-  text-decoration: none;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: 0.2s;
+    color: var(--text-dim);
+    transition: all 0.3s ease;
+    position: relative;
+    display: block;
 }
 
-.sidebar a:hover { color: var(--accent); }
+.sidebar a.active {
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.sidebar a.active::before {
+    content: "";
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2px;
+    height: 12px;
+    background-color: var(--accent);
+}
 
 /* 4. Content Cards */
 .content-card {
