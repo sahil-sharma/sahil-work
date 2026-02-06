@@ -31,6 +31,7 @@ body {
 
 /* 2. Navigation */
 .back-link {
+  font-family: 'Julius Sans One', sans-serif; /* New */
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -38,8 +39,8 @@ body {
   text-decoration: none;
   font-size: 0.8rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 600;
+  letter-spacing: 3px; /* Increased */
+  font-weight: 400;
   margin-bottom: 3rem;
   transition: all 0.3s ease;
 }
@@ -66,17 +67,17 @@ body {
 }
 
 .status-badge {
+  font-family: 'Julius Sans One', sans-serif; /* New */
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
   background: rgba(255, 255, 255, 0.03);
   color: var(--accent);
-  padding: 0.5rem 1rem;
-  border-radius: 4px; /* Matches the theme */
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px; /* Rounded Pill */
   font-size: 0.7rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 700;
+  letter-spacing: 2px;
   margin-bottom: 1.2rem;
   border: 1px solid var(--border);
 }
@@ -99,9 +100,10 @@ h1 {
 }
 
 .tagline { 
-  font-size: 1.1rem; 
+  font-family: 'Julius Sans One', sans-serif; /* New */
+  font-size: 1rem; 
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   color: var(--text-dim); 
   margin-bottom: 2rem; 
 }
@@ -120,51 +122,111 @@ h1 {
 .card {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 4px; /* Unified sharp look */
+  border-radius: 24px; /* Matches Working-With-Me */
   padding: 2.5rem;
   transition: border-color 0.4s ease;
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .card:hover { border-color: #444; }
 
 .label {
   display: block;
-  font-size: 0.7rem;
+  font-family: 'Julius Sans One', sans-serif; /* New: About me font change */
+  font-size: 0.85rem;
   text-transform: uppercase;
   color: var(--accent);
-  letter-spacing: 2px;
-  font-weight: 800;
+  letter-spacing: 3px;
+  font-weight: 400;
   margin-bottom: 2rem;
   border-left: 2px solid var(--accent);
   padding-left: 12px;
 }
 
-/* 5. Section Adjustments */
-.about-card { grid-column: span 2; }
-.about-card p { font-size: 1rem; color: var(--text-dim); line-height: 1.8; }
+.about-card { 
+  grid-column: span 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 1.5rem !important;
+}
+.about-card p { 
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif !important;
+  color: var(--text-dim);
+  line-height: 1.8;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  font-weight: 400;
+  margin-top: 5px;
+}
 
 .skills-card { grid-row: span 2; }
 .pill-container { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
 .pill {
-  background: rgba(255,255,255,0.02);
-  padding: 0.4rem 0.8rem;
-  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   border: 1px solid var(--border);
   color: var(--text-dim);
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: default;
+}
+
+/* The Hover State */
+.pill:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.exp-box h4 { 
+  font-family: 'Julius Sans One', sans-serif;
+  margin-bottom: 8px; 
+  font-size: 1rem; 
+  text-transform: uppercase; 
+  letter-spacing: 2px; 
+}
+
+.exp-emoji {
+  font-size: 1.6rem; 
+  min-width: 35px;
+  display: inline-block;
+  /* Adds a very subtle glow to the emoji so it doesn't look flat */
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.1));
+}
+
+.exp-box {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start; /* Keeps the emoji at the top of the header */
 }
 
 .expertise-card { grid-column: span 2; }
 .exp-items { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
 .exp-box { display: flex; gap: 1.2rem; }
-.exp-box i { color: var(--accent); font-size: 1.3rem; margin-top: 2px; }
-.exp-box h4 { margin-bottom: 8px; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; }
-.exp-box p { font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; }
+/* .exp-box i { color: var(--accent); font-size: 1.3rem; margin-top: 2px; } */
+.exp-box h4 { margin-bottom: 8px; font-family: 'Julius Sans One', sans-serif; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; }
+.exp-box p { font-size: 0.85rem; font-family: 'Inter', sans-serif; color: var(--text-dim); line-height: 1.6; }
 
-.education-card { grid-column: span 1; }
-.edu-detail { font-size: 0.8rem; color: var(--text-dim); margin-top: 6px; text-transform: uppercase; }
+.education-card { 
+  grid-column: span 1;
+  white-space: nowrap;
+}
+.edu-detail { 
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  margin-top: 6px;
+  text-transform: uppercase;
+  font-family: 'Inter', sans-serif;
+}
 
 /* 6. Responsive */
 @media (max-width: 900px) {
