@@ -1,13 +1,31 @@
+/* 1. Theme Variables */
 :root {
-  --bg: #090a0b;           /* Obsidian */
-  --card: #111214;         /* Surface */
-  --border: #1f2124;       /* Slate border */
-  --accent: #ffffff;       /* Phosphor white */
-  --text: #e1e1e1;         /* Primary text */
-  --text-dim: #70757a;     /* Muted labels */
+  --bg: #090a0b;
+  --card: #111214;
+  --border: #1f2124;
+  --accent: #ffffff;
+  --accent-rgb: 255, 255, 255;
+  --text: #e1e1e1;
+  --text-dim: #70757a;
+  --highlight: #3b82f6;
+  --heading-color: #ffffff;
+  --pill-bg: rgba(255, 255, 255, 0.02);
 }
 
-/* 1. Global Reset & Layout */
+[data-theme="light"] {
+  --bg: #f0f0f2;
+  --card: #ffffff;
+  --border: #d1d1d6;
+  --accent: #000000;
+  --accent-rgb: 0, 0, 0;
+  --text: #1d1d1f;
+  --text-dim: #515154;
+  --highlight: #0071e3;
+  --heading-color: #000000;
+  --pill-bg: rgba(0, 0, 0, 0.05);
+}
+
+/* 2. Global Reset & Layout */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
@@ -16,22 +34,19 @@ body {
   font-family: 'Inter', -apple-system, sans-serif;
   line-height: 1.6;
   display: flex;
-  justify-content: center; /* Centers the content */
+  justify-content: center;
   padding: 4rem 1rem;
-  scrollbar-width: thin;
-  scrollbar-color: var(--border) var(--bg);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-
-.bg-glow { display: none; } /* Kept off for aesthetic */
 
 .wrapper { 
   max-width: 1000px; 
   width: 100%; 
 }
 
-/* 2. Navigation */
+/* 3. Navigation & Links */
 .back-link {
-  font-family: 'Julius Sans One', sans-serif; /* New */
+  font-family: 'Julius Sans One', sans-serif;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -39,17 +54,14 @@ body {
   text-decoration: none;
   font-size: 0.8rem;
   text-transform: uppercase;
-  letter-spacing: 3px; /* Increased */
-  font-weight: 400;
+  letter-spacing: 3px;
   margin-bottom: 3rem;
   transition: all 0.3s ease;
 }
 
-.back-link i { font-size: 0.7rem; transition: transform 0.3s ease; }
 .back-link:hover { color: var(--accent); }
-.back-link:hover i { transform: translateX(-4px); }
 
-/* 3. Hero Section */
+/* 4. Hero Section */
 .hero {
   display: flex;
   align-items: center;
@@ -60,21 +72,21 @@ body {
 .profile-img {
   width: 190px; 
   height: 190px;
-  border-radius: 50% !important; /* Sharp tactical corners */
+  border-radius: 50% !important;
   border: 1px solid var(--border);
   object-fit: cover;
-  filter: grayscale(20%); /* Optional: adds to the obsidian vibe */
+  background: var(--card);
 }
 
 .status-badge {
-  font-family: 'Julius Sans One', sans-serif; /* New */
+  font-family: 'Julius Sans One', sans-serif;
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--pill-bg);
   color: var(--accent);
   padding: 0.5rem 1.2rem;
-  border-radius: 20px; /* Rounded Pill */
+  border-radius: 20px;
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -86,7 +98,7 @@ body {
   width: 8px; height: 8px;
   background: var(--accent);
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.5);
 }
 
 h1 {
@@ -95,12 +107,12 @@ h1 {
   letter-spacing: 5px;
   font-weight: 400;
   font-size: 2.5rem;
-  color: var(--accent);
+  color: var(--heading-color);
   margin-bottom: 0.5rem;
 }
 
 .tagline { 
-  font-family: 'Julius Sans One', sans-serif; /* New */
+  font-family: 'Julius Sans One', sans-serif;
   font-size: 1rem; 
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -108,34 +120,53 @@ h1 {
   margin-bottom: 2rem; 
 }
 
-.contacts { display: flex; flex-wrap: wrap; gap: 2rem; font-size: 0.85rem; color: var(--text-dim); }
-.contacts a { color: inherit; text-decoration: none; transition: 0.2s; }
+.contacts { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 2rem;
+  font-size: 0.85rem; 
+  color: var(--text-dim); 
+  align-items: center;
+}
+
+.contacts a, .contacts .loc {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: 0.2s;
+}
+
+.contacts a { color: var(--text-dim); text-decoration: none; transition: 0.2s; }
 .contacts a:hover { color: var(--accent); }
 
-/* 4. Bento Grid */
+/* 5. Bento Grid */
 .bento-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.5rem;
 }
 
 .card {
   background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 24px; /* Matches Working-With-Me */
+  border-radius: 24px;
   padding: 2.5rem;
-  transition: border-color 0.4s ease;
-  border-color: rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
 }
 
-.card:hover { border-color: #444; }
+.card:hover { 
+    border-color: var(--accent);
+    box-shadow: 0 10px 30px rgba(var(--accent-rgb), 0.05);
+}
 
 .label {
   display: block;
-  font-family: 'Julius Sans One', sans-serif; /* New: About me font change */
+  font-family: 'Julius Sans One', sans-serif;
   font-size: 0.85rem;
   text-transform: uppercase;
-  color: var(--accent);
+  color: var(--heading-color);
   letter-spacing: 3px;
   font-weight: 400;
   margin-bottom: 2rem;
@@ -143,118 +174,97 @@ h1 {
   padding-left: 12px;
 }
 
-.about-card { 
-  grid-column: span 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-bottom: 1.5rem !important;
-}
-.about-card p { 
-  font-size: 1rem;
-  font-family: 'Inter', sans-serif !important;
-  color: var(--text-dim);
-  line-height: 1.8;
-  text-transform: none !important;
-  letter-spacing: normal !important;
-  font-weight: 400;
-  margin-top: 5px;
-}
+.about-card { grid-column: span 2; }
+.about-card p { color: var(--text-dim); font-size: 1rem; }
 
 .skills-card { grid-row: span 2; }
-.pill-container { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+
+.pill-container { 
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 0.8rem;
+  margin-top: 10px;
+}
 
 .pill {
-  background: rgba(255, 255, 255, 0.02);
-  padding: 0.5rem 1rem;
+  background: var(--pill-bg);
+  padding: 0.6rem 1rem;
   border-radius: 20px;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  font-size: 0.75rem;
+  white-space: nowrap;
   border: 1px solid var(--border);
   color: var(--text-dim);
-  font-family: 'Inter', sans-serif;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: default;
+  transition: all 0.3s ease;
 }
 
-/* The Hover State */
 .pill:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.4);
+  background: var(--card);
+  border-color: var(--accent);
   color: var(--accent);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.exp-box h4 { 
-  font-family: 'Julius Sans One', sans-serif;
-  margin-bottom: 8px; 
-  font-size: 1rem; 
-  text-transform: uppercase; 
-  letter-spacing: 2px; 
-}
-
-.exp-emoji {
-  font-size: 1.6rem; 
-  min-width: 35px;
-  display: inline-block;
-  /* Adds a very subtle glow to the emoji so it doesn't look flat */
-  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.1));
-}
-
-.exp-box {
-  display: flex;
-  gap: 1.2rem;
-  align-items: flex-start; /* Keeps the emoji at the top of the header */
 }
 
 .expertise-card { grid-column: span 2; }
 .exp-items { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-.exp-box { display: flex; gap: 1.2rem; }
-/* .exp-box i { color: var(--accent); font-size: 1.3rem; margin-top: 2px; } */
-.exp-box h4 { margin-bottom: 8px; font-family: 'Julius Sans One', sans-serif; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; }
-.exp-box p { font-size: 0.85rem; font-family: 'Inter', sans-serif; color: var(--text-dim); line-height: 1.6; }
+
+.exp-box h4 { 
+    font-family: 'Julius Sans One', sans-serif; 
+    color: var(--heading-color);
+    margin-bottom: 8px; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+}
+
+.exp-box p { font-size: 0.85rem; color: var(--text-dim); }
+
+.edu-detail { color: var(--text-dim); text-transform: uppercase; font-size: 0.8rem; }
 
 .education-card { 
   grid-column: span 1;
+}
+
+.education-card h4 {
+  font-family: 'Julius Sans One', sans-serif;
+  color: var(--heading-color);
+  font-size: 0.80rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
   white-space: nowrap;
 }
-.edu-detail { 
-  font-size: 0.8rem;
-  color: var(--text-dim);
-  margin-top: 6px;
-  text-transform: uppercase;
-  font-family: 'Inter', sans-serif;
+
+/* 6. Theme Toggle Custom Styling (Specific to this page) */
+.theme-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 9999;
+    display: flex;
+    transition: all 0.3s ease;
 }
 
-/* 6. Responsive */
-@media (max-width: 900px) {
-  .hero { flex-direction: column; text-align: center; gap: 2rem; }
-  .contacts { justify-content: center; }
-  .bento-grid { grid-template-columns: 1fr; }
-  .about-card, .skills-card, .expertise-card { grid-column: span 1; }
-  .exp-items { grid-template-columns: 1fr; }
-  .profile-img { width: 160px; height: 160px; }
-}
-
-/* The container link */
-.reverse-email-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    color: var(--text-dim);
-    transition: color 0.3s ease;
-}
-
-.reverse-email-link:hover {
-    color: var(--accent);
-}
-
-/* The magic flip */
+/* 7. Reverse Email Logic */
 .reverse-text {
     unicode-bidi: bidi-override;
     direction: rtl;
     display: inline-block;
+}
+
+/* 8. Responsive */
+@media (max-width: 600px) {
+    .theme-btn {
+        top: auto;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .card {
+        padding: 1.5rem;
+        border-radius: 16px;
+    }
 }
