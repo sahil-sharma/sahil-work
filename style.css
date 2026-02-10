@@ -204,7 +204,7 @@ body {
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
     letter-spacing: 2px;
-    color: var(--accent);
+    color: var(--text-dim);
     cursor: pointer;
     opacity: 0.8;
     transition: opacity 0.3s ease;
@@ -212,6 +212,8 @@ body {
 
 .reverse-email:hover {
     opacity: 1;
+    color: var(--accent);
+    text-decoration: underline;
 }
 
 /* Mobile Height Adjustment */
