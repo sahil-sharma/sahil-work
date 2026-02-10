@@ -255,16 +255,54 @@ h1 {
     display: inline-block;
 }
 
-/* 8. Responsive */
-@media (max-width: 600px) {
-    .theme-btn {
-        top: auto;
-        bottom: 20px;
-        right: 20px;
-    }
-    
-    .card {
-        padding: 1.5rem;
-        border-radius: 16px;
-    }
+/* 8. Comprehensive Mobile Overhaul */
+@media (max-width: 850px) {
+  /* 1. Reset the Grid to a single column */
+  .bento-grid {
+    grid-template-columns: 1fr !important; 
+    gap: 1rem;
+  }
+
+  /* 2. Force all cards to full width (removes the 'span 2' logic) */
+  .about-card, .skills-card, .expertise-card, .education-card {
+    grid-column: span 1 !important;
+    grid-row: auto !important;
+  }
+
+  /* 3. Handle the Hero section (Photo + Text) */
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .profile-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* 4. Fix the Expertise items (prevent overlapping) */
+  .exp-items {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+  }
+
+  /* 5. Clean up spacing */
+  body {
+    padding: 2rem 1rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+    border-radius: 20px;
+  }
+
+  /* 6. Move the theme button to the bottom for thumb-reach */
+  .theme-btn {
+    top: auto;
+    bottom: 20px;
+    right: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  }
 }
