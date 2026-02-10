@@ -232,7 +232,7 @@ h1 {
   white-space: nowrap;
 }
 
-/* 6. Theme Toggle Custom Styling (Specific to this page) */
+/* 6. Theme Toggle Custom Styling */
 .theme-btn {
     position: fixed;
     top: 20px;
