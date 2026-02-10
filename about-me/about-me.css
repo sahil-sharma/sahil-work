@@ -256,7 +256,9 @@ h1 {
   display: block;
   width: 20px;
   height: 20px;
-  stroke: var(--accent);
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
 }
 
 /* 7. Reverse Email Logic */
@@ -322,12 +324,28 @@ h1 {
   }
 
   .label {
-    margin-left: 0;
-    padding-left: 10px;
     border-left: 2px solid var(--accent);
+    margin-left: 0;
+    padding-left: 12px;
   }
   
   .wrapper {
-    padding: 0 10px;
+    padding: 0 20px;
+    overflow-x: hidden;
+  }
+
+  .contacts {
+    display: flex;
+    flex-direction: column; /* Stacks them vertically */
+    align-items: center;    /* Centers them horizontally */
+    gap: 1rem;              /* Space between lines */
+    justify-content: center;
+    width: 100%;
+  }
+
+  .contacts a, .contacts .loc {
+    justify-content: center;
+    width: 100%;
+    font-size: 0.9rem;
   }
 }
