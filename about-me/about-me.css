@@ -113,9 +113,10 @@ h1 {
 
 .tagline { 
   font-family: 'Julius Sans One', sans-serif;
-  font-size: 1rem; 
+  font-size: 0.9rem;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
+  white-space: nowrap;
   color: var(--text-dim); 
   margin-bottom: 2rem; 
 }
@@ -336,16 +337,19 @@ h1 {
 
   .contacts {
     display: flex;
-    flex-direction: column; /* Stacks them vertically */
-    align-items: center;    /* Centers them horizontally */
-    gap: 1rem;              /* Space between lines */
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5rem;
     justify-content: center;
     width: 100%;
   }
 
   .contacts a, .contacts .loc {
+    width: auto;
     justify-content: center;
-    width: 100%;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+  }
+  .contacts .loc {
+    flex-basis: 100%;
   }
 }
