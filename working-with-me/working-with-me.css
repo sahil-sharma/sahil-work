@@ -249,25 +249,6 @@ code {
     display: flex;
 }
 
-/* 8. Footer */
-.manual-footer {
-  padding-top: 40px;
-  border-top: 1px solid var(--border);
-  text-align: center;
-  margin-top: 60px;
-  font-family: 'Julius Sans One', sans-serif;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-size: 0.8rem;
-  color: var(--text-dim);
-}
-
-.manual-footer p {
-    color: var(--text-dim);
-    font-size: 0.85rem;
-    opacity: 0.8;
-}
-
 /* 9. Responsive */
 @media (max-width: 850px) {
   .content-layout { grid-template-columns: 1fr; }
@@ -300,6 +281,26 @@ code {
     unicode-bidi: bidi-override;
     direction: rtl;
     display: inline-block;
+    text-transform: none !important;
+    color: var(--text-dim); 
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reverse-email:hover {
+    color: var(--accent);
+    letter-spacing: 2px;
+    text-decoration: underline;
+}
+
+/* .reverse-email {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    display: inline-block;
     color: var(--text-dim);
     font-family: 'Inter', sans-serif;
     font-weight: 600;
@@ -310,4 +311,31 @@ code {
 .reverse-email:hover {
     color: var(--accent);
     text-decoration: underline;
+} */
+
+.contact-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 80px;
+    padding: 40px 20px;
+    border-top: 1px solid var(--border);
+}
+
+.contact-footer p {
+    font-family: 'Julius Sans One', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+}
+
+.copyright {
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    opacity: 0.9;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }

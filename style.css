@@ -101,7 +101,6 @@ h1, .name-heading {
     padding: 4px;
 }
 
-/* Navigation Links */
 .links-nav {
     display: flex;
     flex-direction: column;
@@ -182,14 +181,6 @@ h1, .name-heading {
     letter-spacing: 4px;
 }
 
-/* Footer & Email */
-.contact-footer {
-    margin-top: 50px;
-    padding-top: 20px;
-    border-top: 1px solid var(--border);
-    text-align: center;   
-}
-
 .email-wrapper {
     font-family: 'Julius Sans One', sans-serif; 
     font-size: 1.1rem;
@@ -199,7 +190,6 @@ h1, .name-heading {
     gap: 2px;
 }
 
-/* Theme Toggle Button */
 .theme-btn {
     position: fixed;
     top: 20px;
@@ -214,7 +204,6 @@ h1, .name-heading {
     display: flex;
 }
 
-/* Mobile Adjustments */
 @media (max-width: 480px) {
     .main-photo { width: 140px; height: 140px; }
     .name-heading { font-size: 1.8rem; }
@@ -225,6 +214,17 @@ h1, .name-heading {
     }
 }
 
+.contact-footer {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    gap: 1.5rem;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border);
+    width: 100%;
+}
+
 .reverse-email {
     unicode-bidi: bidi-override;
     direction: rtl;
@@ -232,13 +232,25 @@ h1, .name-heading {
     text-transform: none !important;
     color: var(--text-dim); 
     font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
     font-weight: 500;
+    letter-spacing: 1px;
     cursor: pointer;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .reverse-email:hover {
-    opacity: 1;
     color: var(--accent);
+    letter-spacing: 2px;
     text-decoration: underline;
+}
+
+.copyright {
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    opacity: 0.9;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
 }

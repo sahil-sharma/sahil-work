@@ -353,3 +353,22 @@ h1 {
     flex-basis: 100%;
   }
 }
+
+.contact-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 80px;
+    padding: 40px 20px;
+    border-top: 1px solid var(--border);
+}
+
+.copyright {
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    opacity: 0.9;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
