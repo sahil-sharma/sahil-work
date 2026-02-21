@@ -194,14 +194,30 @@ h1, .name-heading {
     position: fixed;
     top: 20px;
     right: 20px;
-    background: var(--card);
+    background: var(--nav-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--border);
-    color: var(--text);
+    color: var(--accent);
     padding: 12px;
-    border-radius: 50%;
+    
+    border-radius: 12px; 
+    width: 44px;
+    height: 44px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
     cursor: pointer;
     z-index: 9999;
-    display: flex;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.theme-btn:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+    background: rgba(var(--accent-rgb), 0.1);
 }
 
 @media (max-width: 480px) {
@@ -211,6 +227,14 @@ h1, .name-heading {
         top: auto;
         bottom: 20px;
         right: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .theme-btn {
+        top: auto;
+        bottom: 20px;
+        border-radius: 12px;
     }
 }
 
