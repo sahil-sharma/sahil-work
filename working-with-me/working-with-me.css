@@ -297,22 +297,6 @@ code {
     text-decoration: underline;
 }
 
-/* .reverse-email {
-    unicode-bidi: bidi-override;
-    direction: rtl;
-    display: inline-block;
-    color: var(--text-dim);
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    cursor: pointer;
-    text-transform: none !important;
-}
-
-.reverse-email:hover {
-    color: var(--accent);
-    text-decoration: underline;
-} */
-
 .contact-footer {
     display: flex;
     flex-direction: column;

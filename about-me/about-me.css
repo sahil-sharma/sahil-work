@@ -25,7 +25,6 @@
   --pill-bg: rgba(0, 0, 0, 0.05);
 }
 
-/* 2. Global Reset & Layout */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
@@ -44,7 +43,6 @@ body {
   width: 100%; 
 }
 
-/* 3. Navigation & Links */
 .back-link {
   font-family: 'Julius Sans One', sans-serif;
   display: inline-flex;
@@ -61,7 +59,6 @@ body {
 
 .back-link:hover { color: var(--accent); }
 
-/* 4. Hero Section */
 .hero {
   display: flex;
   align-items: center;
@@ -142,7 +139,6 @@ h1 {
 .contacts a { color: var(--text-dim); text-decoration: none; transition: 0.2s; }
 .contacts a:hover { color: var(--accent); }
 
-/* 5. Bento Grid */
 .bento-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -233,7 +229,6 @@ h1 {
   white-space: nowrap;
 }
 
-/* 6. Theme Toggle Custom Styling */
 .theme-btn {
   position: fixed;
   top: 20px;
@@ -262,28 +257,23 @@ h1 {
   stroke-width: 2;
 }
 
-/* 7. Reverse Email Logic */
 .reverse-text {
   unicode-bidi: bidi-override;
   direction: rtl;
   display: inline-block;
 }
 
-/* 8. Comprehensive Mobile Overhaul */
 @media (max-width: 850px) {
-  /* 1. Reset the Grid to a single column */
   .bento-grid {
     grid-template-columns: 1fr !important; 
     gap: 1rem;
   }
 
-  /* 2. Force all cards to full width (removes the 'span 2' logic) */
   .about-card, .skills-card, .expertise-card, .education-card {
     grid-column: span 1 !important;
     grid-row: auto !important;
   }
 
-  /* 3. Handle the Hero section (Photo + Text) */
   .hero {
     flex-direction: column;
     text-align: center;
@@ -296,13 +286,11 @@ h1 {
     height: 150px;
   }
 
-  /* 4. Fix the Expertise items (prevent overlapping) */
   .exp-items {
     grid-template-columns: 1fr !important;
     gap: 1.5rem;
   }
 
-  /* 5. Clean up spacing */
   body {
     padding: 2rem 1rem;
   }
@@ -312,7 +300,6 @@ h1 {
     border-radius: 20px;
   }
 
-  /* 6. Move the theme button to the bottom for thumb-reach */
   .theme-btn {
     top: auto;
     bottom: 20px;
