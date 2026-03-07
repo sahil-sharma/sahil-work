@@ -467,8 +467,6 @@ h1 {
 }
 
 /* --- Waterfall Loading Animation --- */
-
-/* 1. Define the fade-in movement */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -482,8 +480,6 @@ h1 {
     filter: blur(0);
   }
 }
-
-/* 2. Apply initial state to elements */
 
 .back-link,
 .hero,
