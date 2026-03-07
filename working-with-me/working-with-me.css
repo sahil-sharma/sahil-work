@@ -50,23 +50,36 @@ body {
   font-family: 'Julius Sans One', sans-serif;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   color: var(--text-dim);
   text-decoration: none;
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 3px;
-  margin-bottom: 30px;
+  margin-bottom: 3rem;
   transition: all 0.3s ease;
+  padding: 10px 20px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  margin-left: -10px;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .back-link:hover {
   color: var(--accent);
+  border-color: var(--accent);
+  background: var(--pill-bg);
+  transform: translateX(5px);
 }
 
 .back-link:hover i {
   transform: translateX(-4px);
+}
+
+.back-link i {
+  transition: transform 0.3s ease;
 }
 
 .manual-header {
@@ -257,9 +270,10 @@ code {
 
 .theme-btn {
   position: fixed;
-  top: 20px;
+  bottom: 20px;
   right: 20px;
-  background: var(--nav-bg);
+  background: var(--card);
+  border: 1px solid var(--border);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border);
@@ -278,17 +292,22 @@ code {
   z-index: 9999;
   margin: 0;
   transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .theme-btn:hover {
   transform: translateY(-2px);
   border-color: var(--accent);
-  background: rgba(var(--accent-rgb), 0.1);
+  background: var(--card);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+
 }
 
 .theme-btn svg {
   width: 16px;
   height: 16px;
+  fill: none;
+  stroke: var(--accent);
 }
 
 @media (max-width: 850px) {
@@ -413,4 +432,72 @@ code {
   opacity: 0.9;
   letter-spacing: 2px;
   text-transform: uppercase;
+}
+
+/* --- Waterfall Loading Animation --- */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* 1. Set the initial hidden state for the correct classes on THIS page */
+.back-link,
+.manual-header,
+.sidebar,
+.content-card,
+.contact-footer,
+.theme-btn {
+  opacity: 0;
+  animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* 2. Apply the staggered delays */
+.theme-btn {
+  animation-delay: 0.1s;
+}
+
+.back-link {
+  animation-delay: 0.1s;
+}
+
+.manual-header {
+  animation-delay: 0.2s;
+}
+
+.sidebar {
+  animation-delay: 0.3s;
+}
+
+/* Target the cards specifically */
+.content-card:nth-of-type(1) {
+  animation-delay: 0.4s;
+}
+
+.content-card:nth-of-type(2) {
+  animation-delay: 0.5s;
+}
+
+.content-card:nth-of-type(3) {
+  animation-delay: 0.6s;
+}
+
+.content-card:nth-of-type(4) {
+  animation-delay: 0.7s;
+}
+
+.content-card:nth-of-type(5) {
+  animation-delay: 0.8s;
+}
+
+.contact-footer {
+  animation-delay: 1.0s;
 }
