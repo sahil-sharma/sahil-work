@@ -1,3 +1,11 @@
+html {
+  scroll-behavior: smooth;
+  /* This ensures that when you click a link, the section
+     stops 100px before the top, keeping it perfectly
+     inside our new JS trigger zone. */
+  scroll-padding-top: 100px;
+}
+
 /* 1. Theme Variables */
 :root {
   --bg: #090a0b;
@@ -328,9 +336,7 @@ h1 {
   content: '';
   position: absolute;
   inset: 0;
-  /* This creates the progress effect using a CSS variable */
   background: conic-gradient(var(--accent) var(--scroll-percent, 0%), transparent 0%);
-  /* This mask creates the "ring" look by hiding the middle 85% */
   -webkit-mask: radial-gradient(circle, transparent 75%, black 76%);
   mask: radial-gradient(circle, transparent 75%, black 76%);
   z-index: 1;

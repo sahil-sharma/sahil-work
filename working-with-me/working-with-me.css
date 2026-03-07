@@ -1,3 +1,11 @@
+html {
+  scroll-behavior: smooth;
+  /* This ensures that when you click a link, the section
+     stops 100px before the top, keeping it perfectly
+     inside our new JS trigger zone. */
+  scroll-padding-top: 100px;
+}
+
 :root {
   --bg: #090a0b;
   --card: #111214;
@@ -133,10 +141,12 @@ body {
   position: relative;
   display: block;
   text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .sidebar a.active {
   color: var(--accent);
+  transform: translateX(5px);
 }
 
 .sidebar a.active::before {
