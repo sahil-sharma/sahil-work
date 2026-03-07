@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <script>
-        (function() {
+        (function () {
             const savedTheme = localStorage.getItem('theme') || 'dark';
             if (savedTheme === 'light') {
                 document.documentElement.setAttribute('data-theme', 'light');
@@ -13,23 +14,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Sahil Sharma | Cloud &amp; Platform Engineer</title>
     <link rel="canonical" href="https://sahil.work/index.html">
-    <meta name="description" content="Portfolio of Sahil Sharma, a Cloud & Platform Engineer specializing in scalable infrastructure and DevOps.">
+    <meta name="description"
+        content="Portfolio of Sahil Sharma, a Cloud & Platform Engineer specializing in scalable infrastructure and DevOps.">
     <meta name="robots" content="index, follow">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://assets.calendly.com">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Julius+Sans+One&display=swap" media="print" onload="this.media='all'">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Julius+Sans+One&display=swap"
+        media="print" onload="this.media='all'">
     <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
-    <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" media="print" onload="this.media='all'">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23090a0b%22/><path d=%22M30 30 l20 20 l-20 20%22 stroke=%22white%22 stroke-width=%228%22 fill=%22none%22 stroke-linecap=%22round%22/><line x1=%2255%22 y1=%2270%22 x2=%2275%22 y2=%2270%22 stroke=%22white%22 stroke-width=%228%22/></svg>">
+    <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css" media="print"
+        onload="this.media='all'">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23090a0b%22/><path d=%22M30 30 l20 20 l-20 20%22 stroke=%22white%22 stroke-width=%228%22 fill=%22none%22 stroke-linecap=%22round%22/><line x1=%2255%22 y1=%2270%22 x2=%2275%22 y2=%2270%22 stroke=%22white%22 stroke-width=%228%22/></svg>">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="#090a0b">
 </head>
+
 <body>
     <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
-        <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
         </svg>
     </button>
@@ -37,7 +45,8 @@
 
     <main class="main-container">
         <div class="profile-card">
-            <img src="photo.webp" alt="Sahil Sharma" class="main-photo" width="180" height="180" fetchpriority="high" loading="eager">
+            <img src="photo.webp" alt="Sahil Sharma" class="main-photo" width="180" height="180" fetchpriority="high"
+                loading="eager">
 
             <h1 class="name-heading">Sahil Sharma</h1>
             <p class="role-tag">Cloud & Platform Engineer</p>
@@ -48,7 +57,7 @@
                         About Me <i class="fa-solid fa-arrow-right-long" style="opacity: 0.7;"></i>
                     </span>
                 </a>
-                
+
                 <div class="secondary-links">
                     <a href="https://github.com/sahil-sharma" target="_blank" rel="noopener">GitHub</a>
                     <a href="https://sessionize.com/sahilsharma" target="_blank" rel="noopener">Tech Talks</a>
@@ -58,7 +67,8 @@
                     Working With Me
                 </a>
 
-                <button class="cta-button" onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hello-sahil'});return false;">
+                <button class="cta-button"
+                    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/hello-sahil'});return false;">
                     Let's Talk
                 </button>
             </nav>
@@ -78,10 +88,10 @@
         function applyTheme(theme) {
             if (theme === 'light') {
                 htmlElement.setAttribute('data-theme', 'light');
-                if(themeIcon) themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+                if (themeIcon) themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
             } else {
                 htmlElement.removeAttribute('data-theme');
-                if(themeIcon) themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+                if (themeIcon) themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
             }
         }
 
@@ -98,6 +108,20 @@
                 applyTheme(targetTheme);
             });
         }
+        window.addEventListener('scroll', () => {
+            const btn = document.querySelector('.theme-btn');
+            if (!btn) return;
+
+            const winScroll = window.pageYOffset || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+            if (height > 0) {
+                const scrolled = (winScroll / height) * 100;
+                // This updates the CSS variable in real-time
+                btn.style.setProperty('--scroll-percent', scrolled + '%');
+            }
+        });
     </script>
 </body>
+
 </html>

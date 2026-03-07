@@ -297,6 +297,8 @@ h1 {
   position: fixed;
   bottom: 20px;
   right: 20px;
+  width: 44px;
+  height: 44px;
   background: var(--card);
   border: 1px solid var(--border);
   backdrop-filter: blur(12px);
@@ -315,20 +317,36 @@ h1 {
 
   cursor: pointer;
   z-index: 9999;
-  margin: 0;
-  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  /* transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); */
+}
+
+.theme-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* This creates the progress effect using a CSS variable */
+  background: conic-gradient(var(--accent) var(--scroll-percent, 0%), transparent 0%);
+  /* This mask creates the "ring" look by hiding the middle 85% */
+  -webkit-mask: radial-gradient(circle, transparent 75%, black 76%);
+  mask: radial-gradient(circle, transparent 75%, black 76%);
+  z-index: 1;
 }
 
 .theme-btn svg {
-  width: 16px;
-  height: 16px;
-  fill: none;
+  position: relative;
+  z-index: 2;
+  width: 18px;
+  height: 18px;
   stroke: var(--accent);
+  fill: none;
 }
 
 .theme-btn:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   border-color: var(--accent);
   background: var(--card);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);

@@ -1,29 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <script>
-      (function() {
-          const savedTheme = localStorage.getItem('theme') || 'dark';
-          if (savedTheme === 'light') {
-              document.documentElement.setAttribute('data-theme', 'light');
-          }
-      })();
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      if (savedTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Working With Me | Sahil Sharma</title>
   <link rel="canonical" href="https://sahil.work/working-with-me/working-with-me.html">
-  <meta name="description" content="How I collaborate on cloud initiatives, my workflow, and how to get in touch for projects.">
+  <meta name="description"
+    content="How I collaborate on cloud initiatives, my workflow, and how to get in touch for projects.">
   <meta name="robots" content="index, follow">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Julius+Sans+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Julius+Sans+One&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="working-with-me.css">
 </head>
+
 <body>
   <div class="bg-glow"></div>
   <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
-    <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+    <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
     </svg>
   </button>
 
@@ -50,11 +55,14 @@
       </aside>
 
       <main class="main-body">
-        
+
         <section id="why" class="content-card">
           <h2>Why does this doc exist? 🤔</h2>
-          <p>Hi there 👋 This guide is a starting point for us to build a strong working relationship. It outlines my preferences and working style, helping us avoid misunderstandings and move faster together.</p>
-          <p>Think of it as an invitation to open dialogue—I’m equally interested in learning about <strong>your</strong> style.</p>
+          <p>Hi there 👋 This guide is a starting point for us to build a strong working relationship. It outlines my
+            preferences and working style, helping us avoid misunderstandings and move faster together.</p>
+          <p>Think of it as an invitation to open dialogue—I’m equally interested in learning about
+            <strong>your</strong> style.
+          </p>
         </section>
 
         <section id="style" class="content-card">
@@ -65,7 +73,8 @@
           </div>
           <div class="style-item">
             <div class="badge">🚀 Action-Oriented</div>
-            <p>I value quick iterations ("v1.0 is better than perfect"). I'm comfortable with quick hacks to maintain momentum, provided we keep the long-term vision in sight.</p>
+            <p>I value quick iterations ("v1.0 is better than perfect"). I'm comfortable with quick hacks to maintain
+              momentum, provided we keep the long-term vision in sight.</p>
           </div>
           <div class="style-item">
             <div class="badge">👮 Hands-off Delegation</div>
@@ -73,7 +82,8 @@
           </div>
           <div class="style-item">
             <div class="badge">🧪 Experiment-Friendly</div>
-            <p>I love testing new tech. From <code>Kubernetes</code> and <code>Kafka</code> to <code>ArgoCD</code>—if it improves productivity or reliability, I’m in.</p>
+            <p>I love testing new tech. From <code>Kubernetes</code> and <code>Kafka</code> to <code>ArgoCD</code>—if it
+              improves productivity or reliability, I’m in.</p>
           </div>
         </section>
 
@@ -81,8 +91,9 @@
           <h2>Meetings & Time 📅</h2>
           <div class="meeting-box">
             <div class="badge">🗓️ 1:1s</div>
-              <p>Dedicated time for alignment, feedback, and blockers. No status updates—let's focus on growth and strategy.</p>
-            </div>
+            <p>Dedicated time for alignment, feedback, and blockers. No status updates—let's focus on growth and
+              strategy.</p>
+          </div>
           <div class="meeting-box">
             <div class="badge">🧠 Focus / ZEN Time</div>
             <p>I block deep-work slots on my calendar. Please respect these times for uninterrupted concentration.</p>
@@ -110,9 +121,16 @@
         <section id="feedback" class="content-card">
           <h2>What I Value 💡</h2>
           <ul class="value-list">
-            <li><div class="badge">🚀 Proactivity</div> Don't wait for things to break. Raise issues early.</li>
-            <li><div class="badge">🎯 Ownership</div> Lead your tasks independently. Escalate early if you face any blockers.</li>
-            <li><div class="badge">💡 Feedback</div> Use the 3 Ps (Praise, Problem, Potential).</li>
+            <li>
+              <div class="badge">🚀 Proactivity</div> Don't wait for things to break. Raise issues early.
+            </li>
+            <li>
+              <div class="badge">🎯 Ownership</div> Lead your tasks independently. Escalate early if you face any
+              blockers.
+            </li>
+            <li>
+              <div class="badge">💡 Feedback</div> Use the 3 Ps (Praise, Problem, Potential).
+            </li>
           </ul>
         </section>
         <footer class="contact-footer">
@@ -123,62 +141,76 @@
     </div>
   </div>
   <script>
-  window.addEventListener('DOMContentLoaded', () => {
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.6
-    };
+    window.addEventListener('DOMContentLoaded', () => {
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.6
+      };
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // Find the sidebar link that matches the section's ID
-          const id = entry.target.getAttribute('id');
-          document.querySelectorAll('.sidebar a').forEach((link) => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${id}`) {
-              link.classList.add('active');
-            }
-          });
-        }
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Find the sidebar link that matches the section's ID
+            const id = entry.target.getAttribute('id');
+            document.querySelectorAll('.sidebar a').forEach((link) => {
+              link.classList.remove('active');
+              if (link.getAttribute('href') === `#${id}`) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+      }, observerOptions);
+
+      // Track all sections that have an ID
+      document.querySelectorAll('.content-card').forEach((section) => {
+        observer.observe(section);
       });
-    }, observerOptions);
-
-    // Track all sections that have an ID
-    document.querySelectorAll('.content-card').forEach((section) => {
-      observer.observe(section);
     });
-  });
   </script>
   <script>
-      const themeToggle = document.getElementById('theme-toggle');
-      const themeIcon = document.getElementById('theme-icon');
-      const htmlElement = document.documentElement;
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const htmlElement = document.documentElement;
 
-      function applyTheme(theme) {
-          if (theme === 'light') {
-              htmlElement.setAttribute('data-theme', 'light');
-              if(themeIcon) themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
-          } else {
-              htmlElement.removeAttribute('data-theme');
-              if(themeIcon) themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
-          }
+    function applyTheme(theme) {
+      if (theme === 'light') {
+        htmlElement.setAttribute('data-theme', 'light');
+        if (themeIcon) themeIcon.innerHTML = '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+      } else {
+        htmlElement.removeAttribute('data-theme');
+        if (themeIcon) themeIcon.innerHTML = '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
       }
+    }
 
-      // Apply immediately on load based on global storage
-      const currentPreference = localStorage.getItem('theme') || 'dark';
-      applyTheme(currentPreference);
+    // Apply immediately on load based on global storage
+    const currentPreference = localStorage.getItem('theme') || 'dark';
+    applyTheme(currentPreference);
 
-      // Attach the listener once the button is definitely in the DOM
-      if (themeToggle) {
-          themeToggle.addEventListener('click', () => {
-              const storedTheme = localStorage.getItem('theme') || 'dark';
-              const targetTheme = (storedTheme === 'dark') ? 'light' : 'dark';
-              localStorage.setItem('theme', targetTheme);
-              applyTheme(targetTheme);
-          });
+    // Attach the listener once the button is definitely in the DOM
+    if (themeToggle) {
+      themeToggle.addEventListener('click', () => {
+        const storedTheme = localStorage.getItem('theme') || 'dark';
+        const targetTheme = (storedTheme === 'dark') ? 'light' : 'dark';
+        localStorage.setItem('theme', targetTheme);
+        applyTheme(targetTheme);
+      });
+    }
+    window.addEventListener('scroll', () => {
+      const btn = document.querySelector('.theme-btn');
+      if (!btn) return;
+
+      const winScroll = window.pageYOffset || document.documentElement.scrollTop;
+      const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+      if (height > 0) {
+        const scrolled = (winScroll / height) * 100;
+        // This updates the CSS variable in real-time
+        btn.style.setProperty('--scroll-percent', scrolled + '%');
       }
+    });
   </script>
 </body>
+
 </html>
